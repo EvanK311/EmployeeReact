@@ -1,10 +1,28 @@
 
 import './App.css';
+import tablerow from "./components/tablerow";
 
-function App() {
+class App extends Component {
+
+}
+render() {
   return (
     <div>
-      <h2>yo</h2>
+     <Table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Image</th>
+                        <th scope="col">Image</th>
+                        <th scope="col">Phone</th>
+                        <th scope="col">Email</th>
+                    </tr>
+        </thead>
+        <tbody>
+          {tablerow /}
+        </tbody>
+        </table>
     </div>
   );
 }
