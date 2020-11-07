@@ -1,7 +1,7 @@
 import React from "react";
 
-function ResultList(props) {
-    console.log("props.results", props.results)
+function EmployeeResult(props) {
+    console.log("props.employees", props.employees)
     return (
     <table className="table">
         <br />
@@ -11,7 +11,7 @@ function ResultList(props) {
           <th>Phone Number</th>
           <th>Pic</th>
         </tr>
-          {props.results.map(result => (
+          {props.employees.map(result => (
               <tr>
               <th>{result.name.first} {result.name.last}</th>
               <th>{result.email}</th>
@@ -23,4 +23,4 @@ function ResultList(props) {
     );
   }
 
-export default employeeresult;
+export default EmployeeResult;

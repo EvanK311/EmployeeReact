@@ -1,13 +1,9 @@
 
 import './App.css';
-
+import EmployeeSearch from "./components/employeesearch";
 
 function App() {
-  return (
-    <div>
-      <h2>yo</h2>
-    </div>
-  );
+  return <EmployeeSearch />;
 }
 
 export default App;

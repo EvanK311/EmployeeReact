@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
-import SearchForm from "./SearchForm"
-import ResultList from "./ResultList"
+import SearchForm from "./searchform"
+import EmployeeResult from "./employeeresult"
 import API from "../utils/API";
 
 export default class EmployeeSearch extends React.Component {
@@ -65,7 +65,7 @@ export default class EmployeeSearch extends React.Component {
                 />
                 <button className="btn btn-primary" onClick={this.abcSort}>Sort Alphabetically</button>
                 <table className="table">
-                <ResultList results={this.state.displayUsers} />
+                <EmployeeResult results={this.state.displayUsers} />
                 </table>
             </div>
         )
