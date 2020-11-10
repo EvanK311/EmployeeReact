@@ -13,13 +13,13 @@ function EmployeeResult(props) {
         </tr>
           {props.employees.map(result => (
               <tr>
-              <th>{result.name.first} {result.name.last}</th>
-              <th>{result.email}</th>
-              <th>{result.phone}</th>
-              <th><img src={result.picture.thumbnail}/></th>
+              <td>{result.name.first} {result.name.last}</td>
+              <td>{result.email}</td>
+              <td>{result.phone}</td>
+              <td><img src={result.picture.thumbnail}/></td>
               </tr>
           ))}
-    </table>
+    </table>  
     );
   }
 
