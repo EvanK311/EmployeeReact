@@ -3,6 +3,7 @@ import './App.css';
 import React, { Component } from 'react'
 import EmployeeResult from "./components/employeeresult"
 import API from "./utils/API";
+import SearchForm from "./components/searchform"
 
 class App extends React.Component {
     state = {
