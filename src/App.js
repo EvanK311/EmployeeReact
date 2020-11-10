@@ -66,6 +66,12 @@ class App extends React.Component {
             return (
               <div>
                 <EmployeeResult data={this.state.data} />
+                <SearchForm
+                value={this.state.search}
+                handleInputChange={this.handleInputChange}
+                handleFormSubmit={this.handleFormSubmit}
+                handleFilter={this.filterEmployees}
+              />
               </div >
             )
           }
