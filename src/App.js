@@ -7,14 +7,15 @@ import SearchForm from "./components/searchform"
 
 class App extends React.Component {
     state = {
-     data: [],
+      data: [],
+      searchdata: [],
      search: ""
     }
   
   componentDidMount = () => {
         API.search().then(res => {
           // console.log(res);
-          this.setState({ data: res.data.results })
+          this.setState({ data: res.data.results, searchdata: res.data.results })
           console.log({data:res.data});
         }).catch(err => {
             console.log(err);
@@ -36,10 +37,10 @@ class App extends React.Component {
               const filtered = this.state.data.filter(user => (user.name.first.toLowerCase().includes(value) || (user.name.last.toLowerCase().includes(value))))
               this.setState({ data: filtered, searchTerm: value })
             } else {
-              this.setState({ data: [...this.state.backupData], searchTerm: value })
+              this.setState({ data: [...this.state.searchdata], searchTerm: value })
             }
           }
-  
+
           sortNames = () => {
             // get the current employees ( probably this.state.data )
             const sortedNames = this.state.data.sort((a, b) => {
@@ -66,12 +67,8 @@ class App extends React.Component {
             return (
               <div>
                 <EmployeeResult data={this.state.data} />
-                <SearchForm
-                value={this.state.search}
-                handleInputChange={this.handleInputChange}
-                handleFormSubmit={this.handleFormSubmit}
-                handleFilter={this.filterEmployees}
-              />
+                <button className="btn btn-primary" id="filterBtn" onClick={this.buttonPress}>Sort Names</button>
+                <input name="testInput" onChange={this.handleInputChange} value={this.state.searchTerm} placeholder="Search" />
               </div >
             )
           }
