@@ -3,7 +3,7 @@ import './App.css';
 import React, { Component } from 'react'
 import EmployeeResult from "./components/employeeresult"
 import API from "./utils/API";
-import SearchForm from "./components/searchform"
+
 
 class App extends React.Component {
     state = {
@@ -14,7 +14,7 @@ class App extends React.Component {
   
   componentDidMount = () => {
         API.search().then(res => {
-          // console.log(res);
+        
           this.setState({ data: res.data.results, searchdata: res.data.results })
           console.log({data:res.data});
         }).catch(err => {
@@ -22,8 +22,9 @@ class App extends React.Component {
           })
       
       }
-          // .then(res => this.setState({ result: res.data }))
-          // .catch(err => console.log(err));
+          
+  // 
+  // 
   
           handleFormSubmit = event => {
             event.preventDefault();
@@ -41,8 +42,11 @@ class App extends React.Component {
             }
           }
 
+  
+  // 
+  // 
           sortNames = () => {
-            // get the current employees ( probably this.state.data )
+           
             const sortedNames = this.state.data.sort((a, b) => {
               if (a.name.first > b.name.first) {
                 return 1;
@@ -58,11 +62,16 @@ class App extends React.Component {
             }))
           }
           
+  // 
+  // 
             buttonPress = () => {
             this.sortNames()
             console.log(this.state.data)
           }
   
+  
+  // 
+  // 
           render() {
             return (
               <div>
